@@ -15,6 +15,12 @@ class Genome:
 	def __del__(self):
 		print "destructed",self.x
 
+class GenExtension(Genome):
+	counts=0
+	def replicateSeq(self):
+		self.counts = self.counts +7
+		self.sequence()
+		print self.name,"counts",self.counts
 		
 gs=Genome("category1")
 print "\n\n/*****Info on genome class****\\\n\n"
@@ -29,3 +35,7 @@ gs=Genome("category2")
 gs.sequence()
 gs.sequence()
 gs.sequence()
+
+ge=GenExtension("seq")
+ge.sequence()
+ge.replicateSeq()
